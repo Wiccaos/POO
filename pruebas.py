@@ -1,1 +1,2 @@
-print('hello world')
+char1='wekito '
+print(char1 *10)
