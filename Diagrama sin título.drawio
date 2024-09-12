@@ -150,7 +150,14 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="4Ll3kn24MF2oAhtjd29M-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bmPHCQ38n-288zm-gS6u-45" target="bmPHCQ38n-288zm-gS6u-47">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="361" />
+              <mxPoint x="210" y="300" />
+              <mxPoint x="200" y="300" />
+              <mxPoint x="200" y="239" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
