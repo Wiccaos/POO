@@ -1,2 +1,2 @@
 # POO
-poo class 
+poo class notes
