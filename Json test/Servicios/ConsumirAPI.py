@@ -27,6 +27,7 @@ def leer_post_por_id(post_id):
     except KeyError:
         print("El post no fue encontrado.")
     
+
 def crear_post():
     """Función para crear un nuevo post en JSON Placeholder"""
     nuevo_post = Post()
@@ -48,23 +49,12 @@ def crear_post():
         # Realizar la solicitud POST
         ans = requests.post(URL_Post, json=nuevo_post.__dict__)
         ans.raise_for_status()  # Lanza un error si la respuesta no es 200
-        print("Post creado exitosamente:")
-        print(ans.json())  # Mostrar la respuesta del servidor
+        
+        # Crear una instancia de Post con la respuesta
+        created_post_data = ans.json()
+        nuevo_post.id = created_post_data['id']  # Asignar el ID del post creado
+        return nuevo_post  # Retornar el post creado
     except requests.exceptions.HTTPError as http_err:
         print(f"HTTP error occurred: {http_err}")
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
-
-
-
-"""def crear_post():
-    nuevo_post = Post()
-    nuevo_post.title = input("Ingrese el título del post: ")
-    nuevo_post.body = input("Ingrese el cuerpo del post: ")
-    nuevo_post.userId = input("Ingrese el id del usuario: ")
-
-    ans = requests.post(URL_Post, json=nuevo_post.__dict__)
-    ans.raise_for_status()
-    print(ans.json())
-"""
-    

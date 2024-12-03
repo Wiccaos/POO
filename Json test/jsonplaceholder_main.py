@@ -3,15 +3,17 @@ import Servicios.ConsumirAPI
 def menu():
     """Menú interactivo para utilizar las funciones"""
     while True:
-        print("""
-Menú de Jsonplaceholder
+        print(""" 
+Menú de JSONplaceholder
 1. Consultar Post
 2. Crear Post
 3. Salir
 """)
-        try: option = int(input("Ingrese una opción: "))
+        try: 
+            option = int(input("Ingrese una opción: "))
         except ValueError:
             print("Error: Debe ingresar un número")
+            continue  # Volver al inicio del bucle
         
         if option == 1:
             post_id = int(input("Ingrese el ID del post que desea leer: "))
@@ -20,10 +22,14 @@ Menú de Jsonplaceholder
                 print(f"Post ID: {post.id}\nTítulo: {post.title}\nCuerpo: {post.body}")
             
         elif option == 2:    
-            Servicios.ConsumirAPI.crear_post()
+            created_post = Servicios.ConsumirAPI.crear_post()
+            if created_post:
+                print(f"Post creado exitosamente:\nPost ID: {created_post.id}\nTítulo: {created_post.title}\nCuerpo: {created_post.body}")
+        
         elif option == 3:
             print("Saliendo del programa")
             break
 
-#Ejecuar menú
+# Ejecutar menú
 menu()
+
