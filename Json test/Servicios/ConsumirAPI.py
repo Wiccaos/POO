@@ -11,6 +11,7 @@ def leer_post_por_id(post_id):
         
         # Crear una instancia de Post y asignar los valores
         post = Post()
+        post.userId = post_data['userId']
         post.id = post_data['id']
         post.title = post_data['title']
         post.body = post_data['body']
