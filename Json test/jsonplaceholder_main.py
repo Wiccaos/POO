@@ -19,17 +19,16 @@ Menú de JSONplaceholder
             post_id = int(input("Ingrese el ID del post que desea leer: "))
             post = Servicios.ConsumirAPI.leer_post_por_id(post_id)
             if post:
-                print(f"Post ID: {post.id}\nTítulo: {post.title}\nCuerpo: {post.body}")
+                print(f"\nPost ID: {post.id}\nTítulo: {post.title}\nCuerpo: {post.body}")
             
         elif option == 2:    
             created_post = Servicios.ConsumirAPI.crear_post()
             if created_post:
-                print(f"Post creado exitosamente:\nPost ID: {created_post.id}\nTítulo: {created_post.title}\nCuerpo: {created_post.body}")
+                print(f"\nPost creado exitosamente:\nPost ID: {created_post.id}\nTítulo: {created_post.title}\nCuerpo: {created_post.body}")
         
         elif option == 3:
-            print("Saliendo del programa")
+            print("Saliendo del programa...")
             break
 
 # Ejecutar menú
 menu()
-
