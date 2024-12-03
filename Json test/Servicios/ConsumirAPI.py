@@ -1,15 +1,11 @@
 import requests
 from Clases.Post import Post
-
-#Urls fijas de JSON Placeholder
-URL_Post = "https://jsonplaceholder.typicode.com/posts"
-URL_Todo = "https://jsonplaceholder.typicode.com/todos"
-
+import Auxiliares.Variables_fijas 
 
 def leer_post_por_id(post_id):
     """Función para leer un post desde JSON Placeholder según el id"""
     try:
-        ans = requests.get(f"{URL_Post}/{post_id}")
+        ans = requests.get(f"{Auxiliares.Variables_fijas.URL_Post}/{post_id}")
         ans.raise_for_status()  # Lanza un error si la respuesta no es 200
         post_data = ans.json()
         
@@ -47,7 +43,7 @@ def crear_post():
     
     try:
         # Realizar la solicitud POST
-        ans = requests.post(URL_Post, json=nuevo_post.__dict__)
+        ans = requests.post(Auxiliares.Variables_fijas.URL_Post, json=nuevo_post.__dict__)
         ans.raise_for_status()  # Lanza un error si la respuesta no es 200
         
         # Crear una instancia de Post con la respuesta
