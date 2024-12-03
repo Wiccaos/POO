@@ -1,6 +1,6 @@
 class Post:
-    def __init__(self, userId = '', Id = 0, title = '', body = ''):
+    def __init__(self, userId = '', id = 0, title = '', body = ''):
         self.userId = userId
-        self.Id = Id
+        self.id = id
         self.title = title
         self.body = body
